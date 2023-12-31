@@ -36,12 +36,10 @@ var productSchema = new mongoose.Schema(
             required:true,
         },
         sold: {
-            type:String,
-            default: 0,
+            type: Number,
+            required: true,
         },
-        images: {
-            type:Array,
-        },
+        images: [],
         ratings: [
             {
                 star: Number,
@@ -55,4 +53,6 @@ var productSchema = new mongoose.Schema(
 );
 
 //Export the model
-module.exports = mongoose.model("Product", productSchema);
+const Product = mongoose.model('Product', productSchema);
+
+module.exports = Product;
